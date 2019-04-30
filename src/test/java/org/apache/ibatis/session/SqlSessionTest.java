@@ -136,6 +136,7 @@ public class SqlSessionTest extends BaseDataTest {
   @Test
   public void shouldCommitAnUnUsedSqlSession() throws Exception {
     SqlSession session = sqlMapper.openSession(TransactionIsolationLevel.SERIALIZABLE);
+    session.getMapper()
     session.commit(true);
     session.close();
   }
